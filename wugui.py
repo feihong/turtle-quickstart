@@ -8,13 +8,23 @@ import watchfiles
 
 
 def run(main):
-    turtle.onkey(turtle.bye, 'q')
     turtle.listen()
+    root = get_root()
+    root.protocol('WM_DELETE_WINDOW', on_exit)
+
+    def on_key(evt):
+        if evt.keysym == 'Escape':
+            on_exit()
+
+    root.bind('<KeyRelease>', on_key)
     main()
     turtle.mainloop()
 
 def get_root():
-    return turtle.getscreen().cv.winfo_toplevel()
+    return turtle.getscreen().getcanvas().winfo_toplevel()
+
+def on_exit():
+    turtle.bye()
 
 def watch_file(py_file):
     for _changes in watchfiles.watch(py_file):

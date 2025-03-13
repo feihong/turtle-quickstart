@@ -1,9 +1,9 @@
 from turtle import *
-import tg
+import wugui
 
 def main():
     shape('turtle')
-    tracer(40)
+    tracer(900)
     for i in range(15_000):
         fd(1)
         if i % 360 == 0:
@@ -12,4 +12,4 @@ def main():
             right(1)
 
 if __name__ == '__main__':
-    tg.run(main)
+    wugui.run(main)
