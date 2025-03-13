@@ -7,9 +7,14 @@ import turtle
 import watchfiles
 
 
+geometry_file = Path('.wugui_geometry')
+
 def run(main):
-    turtle.listen()
     root = get_root()
+
+    if geometry_file.exists():
+        root.geometry(geometry_file.read_text())
+
     root.protocol('WM_DELETE_WINDOW', on_exit)
 
     def on_key(evt):
@@ -17,6 +22,8 @@ def run(main):
             on_exit()
 
     root.bind('<KeyRelease>', on_key)
+
+    turtle.listen()
     main()
     turtle.mainloop()
 
@@ -24,6 +31,7 @@ def get_root():
     return turtle.getscreen().getcanvas().winfo_toplevel()
 
 def on_exit():
+    geometry_file.write_text(get_root().geometry())
     turtle.bye()
 
 def watch_file(py_file):
@@ -46,4 +54,3 @@ if __name__ == '__main__':
     get_root().bind('<<file_changed>>', functools.partial(reload, module))
 
     run(module.main)
-

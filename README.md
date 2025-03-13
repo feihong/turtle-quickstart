@@ -12,5 +12,4 @@ Run a program with live reload:
 
 ## TODO
 
-- Remember position of window from last run
 - Allow reload to interrupt turtle drawing

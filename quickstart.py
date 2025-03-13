@@ -3,7 +3,7 @@ import wugui
 
 def main():
     shape('turtle')
-    tracer(900)
+    tracer(100)
     for i in range(15_000):
         fd(1)
         if i % 360 == 0:
