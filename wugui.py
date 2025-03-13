@@ -1,13 +1,14 @@
 import sys
 from pathlib import Path
 import functools
+import tempfile
 import threading
 import importlib
 import turtle
 import watchfiles
 
 
-geometry_file = Path('.wugui_geometry')
+geometry_file = Path(tempfile.gettempdir()) / 'wugui_geometry'
 
 def run(main):
     root = get_root()
