@@ -2,10 +2,11 @@ from turtle import *
 import wugui
 
 def main():
-    shape('turtle')
     tracer(100)
+    shape('turtle')
+
     for i in range(15_000):
-        fd(1)
+        forward(1)
         if i % 360 == 0:
             right(10)
         else:
