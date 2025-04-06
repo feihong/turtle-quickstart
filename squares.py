@@ -1,5 +1,5 @@
 from turtle import *
-import wugui
+import hua
 
 def square(length):
     for _ in range(4):
@@ -13,4 +13,4 @@ def main():
         right(10)
 
 if __name__ == '__main__':
-    wugui.run(main)
+    hua.run(main)

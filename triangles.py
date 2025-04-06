@@ -1,5 +1,5 @@
 import turtle
-import wugui
+import hua
 
 def triangle(t):
     for _ in range(3):
@@ -17,4 +17,4 @@ def main():
         triangle(t)
 
 if __name__ == '__main__':
-    wugui.run(main)
+    hua.run(main)

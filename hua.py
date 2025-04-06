@@ -5,9 +5,10 @@ import threading
 import importlib
 import turtle
 import watchfiles
+import time
 
 
-geometry_file = Path(tempfile.gettempdir()) / 'wugui_geometry'
+geometry_file = Path(tempfile.gettempdir()) / 'hua_geometry'
 
 def run(main):
     root = get_root()
@@ -36,7 +37,9 @@ def on_exit():
 
 def watch_file(py_file, module):
     for _changes in watchfiles.watch(py_file):
-        get_root().after_idle(reload, module)
+        print(_changes, 'whoa', type(get_root()))
+        # get_root().after_idle(reload, module)
+        get_root().after_idle(lambda: print(time.time()))
 
 def reload(module):
     turtle.getscreen().clearscreen()

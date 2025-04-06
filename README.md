@@ -8,8 +8,12 @@ Install dependencies:
 
 Run a program with live reload:
 
-    python wugui.py quickstart.py
+    python watch.py quickstart.py
 
 ## TODO
 
 - Allow reload to interrupt turtle drawing
+
+## Links
+
+- [Teach Your Kids to Code](https://nostarch.com/teachkids)
