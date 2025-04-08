@@ -16,5 +16,5 @@ def main():
     for t in turtles:
         triangle(t)
 
-if __name__ == '__main__':
-    hua.run(main)
+
+hua.run(main)

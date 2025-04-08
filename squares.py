@@ -12,5 +12,5 @@ def main():
         square(100)
         right(10)
 
-if __name__ == '__main__':
-    hua.run(main)
+
+hua.run(main)

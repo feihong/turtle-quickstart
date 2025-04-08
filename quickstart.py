@@ -12,5 +12,4 @@ def main():
         else:
             right(1)
 
-if __name__ == '__main__':
-    hua.run(main)
+hua.run(main)
