@@ -1,7 +1,10 @@
 import tkinter as tk
-from turtle import RawTurtle, TurtleScreen
+import turtle
+
+width, height = 600, 400
 
 root = tk.Tk()
+root.geometry(f'{width}x{height}')
 root.title("RawTurtle in Tkinter Example")
 
 def on_key(evt):
@@ -9,11 +12,11 @@ def on_key(evt):
         root.quit()
 root.bind('<KeyRelease>', on_key)
 
-canvas = tk.Canvas(root, width=600, height=400)
-canvas.pack()
+canvas = turtle.ScrolledCanvas(root, width=width, height=height, canvwidth=width-20, canvheight=height-20)
+canvas.pack(fill=tk.BOTH, expand=True)
 
-screen = TurtleScreen(canvas)
-t = RawTurtle(screen)
+screen = turtle.TurtleScreen(canvas)
+t = turtle.RawTurtle(screen)
 
 t.forward(100)
 t.left(90)

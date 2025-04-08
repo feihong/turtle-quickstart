@@ -17,3 +17,4 @@ Run a program with live reload:
 ## Links
 
 - [Teach Your Kids to Code](https://nostarch.com/teachkids)
+- [turtle module source](https://github.com/python/cpython/blob/main/Lib/turtle.py)
