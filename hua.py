@@ -18,8 +18,13 @@ def _run(main):
     root.protocol('WM_DELETE_WINDOW', on_exit)
 
     def on_key(evt):
+        print(evt.keycode, evt.state, evt.keysym)
         if evt.keysym == 'Escape':
             on_exit()
+        # Restart the program on Cmd+r
+        elif evt.keysym == 'r' and (evt.state & 0x8):
+            turtle.getscreen().clear()
+            main()
 
     root.bind('<KeyRelease>', on_key)
 

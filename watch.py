@@ -26,7 +26,7 @@ def poll(fn, interval):
 if __name__ == '__main__':
     py_file = Path(sys.argv[1])
 
-    # Monkey patch hua.run so it doesn't run on import
+    # Monkey patch hua.run so it doesn't run the main function during import
     hua.run = lambda main: main
     module = importlib.import_module(py_file.stem)
 
